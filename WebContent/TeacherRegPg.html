@@ -1,0 +1,170 @@
+<html>
+    <head>
+  <link rel="stylesheet" href="bootstrap.css">
+    <title>Registration Page</title>
+
+<script>
+function Check(){
+	var fname=document.forms["myForm"]["tea_fname"].value;
+	if(fname==""){
+		alert("Name Missing");
+		return false;
+	}
+	if(lname==""){
+		alert("Last name Missing");
+		return false;
+	}
+	var con=document.forms["myForm"]["tea_con"].value;
+	if(isNaN(con)||con==""){
+		alert("Enter Correct Contact Number");
+		return false;
+	}
+	if(con.length!=10){
+		alert("Contact Number must be atleast 10 digits long");
+		return false;
+	}
+	var email=document.forms["myForm"]["tea_email"].value;
+	if(email==""){
+		alert("Email Missing");
+		return false;		
+	}
+	var at=email.indexOf("@");
+	var dot=email.lastIndexOf(".");
+		if (at<1||dot<at+2||dot+2>=email.length){
+			alert("Email entered is invalid!!");
+			return false;
+		}				
+	var uname=document.forms["myForm"]["tea_uname"].value;
+	if(uname==""){
+		alert("Enter Username");
+		return false;		
+	}
+	var password=document.forms["myForm"]["tea_password"].value;
+	if(password==""){
+		alert("Password Missing");
+		return false;		
+	}
+	if(password.length<6){alert("Password too short"); return false;}
+}
+</script>
+</head>
+<body>
+<center>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <img src="logo2.png" height=60 width=54> <h5>From Dumbs To Pros</h5> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+&emsp;
+<link rel="alternate stylesheet" href="style.css">
+<ul>
+<li><a>More</a>
+	<ul>
+		<li><a href="Home.html">Home</a></li>
+		<li><a href="TeacherLogin.html">Log In</a></li>
+	</ul>
+</li>
+</ul>
+&emsp;&emsp;
+</link>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;
+    <h2>Teacher Sign Up Page</h2>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <img src="Lobo_Industries.png" align="right" height="60" width="240">
+</nav>
+
+	<center>
+<BR><BR>
+<img src="Lobo_Technologies.png" height="25" width="100"><BR>		
+    <img src="logo2.png" height=111 width=100>
+
+<form name="myForm" onsubmit="return Check()" action="TeacherRegPg" method ="post" enctype="multipart/form-data" >
+<table border="0">
+				
+				<tr>
+					<td>Portrait Photo*: </td>
+					<td><input type="file" name="tea_pic" id="pic" size="50" required/></td>
+				</tr>
+				
+				<tr>
+					<td>First Name*: </td>
+					<td><input type="text" name="tea_fname" size="50" required/></td>
+				</tr>
+				<tr>
+					<td>Middle Name: </td>
+					<td><input type="text" name="tea_mname" size="50"/></td>
+				</tr>
+				<tr>
+					<td>Last Name*: </td>
+					<td><input type="text" name="tea_lname" size="50" required/></td>
+				</tr>
+				<tr>
+					<td>Email*: </td>
+					<td><input type="text" placeholder="email@example.com" name="tea_email" size="50" required/></td>
+				</tr>
+				<tr>
+					<td></td>	
+					<td><small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    				</td>
+				</tr>
+				<tr>
+					<td>Contact*: </td>
+					<td><input type="text" placeholder="10 digits long" name="tea_con" size="50" required/></td>
+				</tr>
+				<tr>
+					<td></td>	
+					<td><small id="emailHelp" class="form-text text-muted">We'll never share your Contact Number with anyone else.</small>
+    				</td>
+				</tr>
+				<tr>
+					<td>Date of Birth*: </td>
+					<td><input type="date" name="tea_dob" size="50" required/></td>
+				</tr>
+				<tr>
+					<td>Course*: </td>
+					<td><input type="text" name="tea_course" size="50" required/></td>
+				</tr>
+				<tr>
+					<td>Profession*: </td>
+					<td><input type="text" name="tea_work" size="50" required/></td>
+				</tr>
+				<tr>
+					<td>Work Address: </td>
+					<td><input type="text" name="tea_off" size="50"/></td>
+				</tr>
+				<tr>
+					<td>Work Post: </td>
+					<td><input type="text" name="tea_post" size="50"/></td>
+				</tr>
+				<tr>
+					<td>Channel Name*: </td>
+					<td><input type="text" name="tea_uname" size="50" required/></td>
+				</tr>
+				<tr>
+					<td>Password*: </td>
+					<td><input type="password" placeholder="6 characters or more" name="tea_password" size="50" required/></td>
+				</tr>
+				<tr>
+					<td>Confirm Password*: </td>
+					<td><input type="password" name="tea_cpassword" size="50"/></td>
+				</tr>
+				
+				<tr>
+					<td><input type="reset" class="btn btn-primary disabled" ></td>
+					<td><button class="btn btn-primary" onClick="Check()" type="submit">Submit</button></td>
+					</tr>
+			</table>
+</form>
+</center>
+<br><br><br><br><br><br><br>
+<footer class="navbar navbar-expand-lg navbar-dark bg-dark">
+<img src="logo2.png" height=60 width=54> From Dumbs To Pros 
+&emsp;&emsp;&emsp;
+Copyright &copy; 2019 Lobo Technologies. All Rights Reserved.
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<a href="terms.html">Terms</a>&emsp;
+<a href="privacypolicy.html">Privacy Policy and Cookie Policy</a>&emsp;
+<a href="intellectualproperty.html">Intellectual Policy</a>
+</footer>
+</body>
+</html>
